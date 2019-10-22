@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="posts col-md-8">
+
+        <!-- User greeting -->
+        <div class="post">
+          <div class="card mb-4 fadeInDown">
+            {% if user.is_authenticated %}
+                <h2>Hello, {{ user.username }}</h2>
+                <p><a href="{% url 'logout' %}">Log Out</a></p>
+            {% else %}
+                <h2>You must <a href="{% url 'login' %}">Log In</a></h2>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="post">
+          <a href="#">
+            <div class="card mb-4 fadeInDown">
+              <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+              <div class="card-body">
+                <div class="d-flex justify-content-start usr-info">
+                  <img class="avatar-img" src="https://via.placeholder.com/50" alt="avatar">
+                  <h2 class="card-title usr-name">Name Name</h2>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="post">
+          <a href="#">
+            <div class="card mb-4 fadeInDown">
+              <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+              <div class="card-body">
+                <div class="d-flex justify-content-start usr-info">
+                  <img class="avatar-img" src="https://via.placeholder.com/50" alt="avatar">
+                  <h2 class="card-title usr-name">Name Name</h2>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="post">
+          <a href="#">
+            <div class="card mb-4 fadeInDown">
+              <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+              <div class="card-body">
+                <div class="d-flex justify-content-start usr-info">
+                  <img class="avatar-img" src="https://via.placeholder.com/50" alt="avatar">
+                  <h2 class="card-title usr-name">Name Name</h2>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="sidebar col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4 fadeInDown">
+          <div class="card-header d-flex justify-content-between">
+            <div class="d-flex flex-column">
+              <h5>@name</h5>
+              <p class="description">Little description</p>
+            </div>
+            <img src="https://via.placeholder.com/50" alt="avatar">
+          </div>
+          <div class="card-body">
+            <div class="buttons d-flex justify-content-md-end">
+              <p><a class="btn fourth" href="#">Edit</a></p>
+              <p><a class="btn fourth" href="{% url 'logout' %}">Log Out</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+{% endblock content %}

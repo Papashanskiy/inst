@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <p><a class="navbar-brand" href="#"><span>Imag</span>inarium v2.0</a></p>
+            <p><h5>Log In</h5></p>
+        </div>
+
+        <!-- Login Form -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="d-flex flex-column bd-highlight mb-3 formFooter">
+          <a class="p-2 bd-highlight underlineHover" href="#">Sign In</a>
+          <a class="p-2 bd-highlight underlineHover" href="#">Forgot Password?</a>
+        </div>
+
+      </div>
+    </div>
+{% endblock %}
